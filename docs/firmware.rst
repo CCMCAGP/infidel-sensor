@@ -35,11 +35,18 @@ Setup and Programming
 Requirements
 ~~~~~~~~~~~~
 
+Requirements
+~~~~~~~~~~~~
+
 -  Arduino > V1.8.8
--  TinyWireS LIbary from https://github.com/nadavmatalon/TinyWireS
--  ATtiny85 Board for Arduino from https://github.com/damellis/attiny
+-  TinyWireS LIbary from https://github.com/nadavmatalon/TinyWireS - Download the .zip file of this library, upload in Arduino > Tools > Include Library > Add .ZIP Library
+-  ATtiny85 Board for Arduino from https://github.com/damellis/attiny - Load this in Board Manager (instructions found from 0:00-1:12) in  https://youtu.be/AmpHIHM41Hw 
 -  ISP Programmer like Arduino over ISP -->
-   https://www.arduino.cc/en/Tutorial/BuiltInExamples/ArduinoISP
+   https://www.arduino.cc/en/Tutorial/BuiltInExamples/ArduinoISP - If you use Arduino as ISP for your ISP programmer, set the Arduino Uno as an Arduino As ISP following same video as above. If the chip is already integrated in the PCB, see wiring below. Upload the example sketch ArduinoISP onto the board, this board is now an ISP programmer and you may need a different board as host.
+
+
+Flash firmware onto sensor
+~~~~~~~~~~~~
 
 Load the code, wire the ISP program to the ISP port on the sensor and
 program it.
