@@ -32,8 +32,6 @@ Files
 Setup and Programming
 ---------------------
 
-Requirements
-~~~~~~~~~~~~
 
 Requirements
 ~~~~~~~~~~~~
@@ -48,20 +46,26 @@ Requirements
 Flash firmware onto sensor
 ~~~~~~~~~~~~
 
-Load the code, wire the ISP program to the ISP port on the sensor and
-program it.
+1. Wire the ISP Programmer to the ISP port on the sensor. Wire as indicated by table below if you don't use the ISP port on the host. 
 
-Remember to set the processor to Attiny85.
-
-Tools --> Processor: Attiny85
-
-Tools --> Clock: Internal 1 MHz
-
-Tools --> Burn bootloader to set the fuses
-
-Sketch --> Upload with Programmer
-
-After programming, the LED should flash two times.
++-------+------------------------------+------------------------------+
+| Type  | Pin # on ISP port (sensor)   | Arduino Pin (ISP Programmer) |
++=======+==============================+==============================+
+| MISO  | 1                            | 12                           |
++-------+------------------------------+------------------------------+
+| VCC   | 2                            | 5V                           |
++-------+------------------------------+------------------------------+
+| SCK   | 3                            | 13                           |
++-------+------------------------------+------------------------------+
+| SDA   | 4                            | 11                           |
++-------+------------------------------+------------------------------+
+| RESET | 5                            | 10                           |
++-------+------------------------------+------------------------------+
+| GND   | 6                            | GND                          |
++-------+------------------------------+------------------------------+
+2. In Tools, Set processor to Attiny85, Clock to Internal 16MHz, Programmer to Arduino as ISP
+3. Tools > Burn Bootloader
+4. Open infidel\_release\_ee.ino and Sketch> Upload with Programmer
 
 Wiring to the Host Board
 ------------------------
@@ -141,10 +145,10 @@ Note the ADC value and use the command "4". The console should show:
     Input values for Table [IDX],[ADC],[DIA um] like (1,619,2090)
     Input: 
 
-Input this string: ``1,503,2000`` Means, Table Index 1 (Command "3"),
-ADC Val 503, Diameter 3
+Input this string: ``1,503,2000`` (without brackets). This means, Table Index 1,
+ADC Val 503, Diameter 2
 
-Repeat this for the next two Ddiameter (1,7mm, 1,4 mm) and write the
+Repeat this for the next two diameters (1,7mm, 1,4 mm) and write the
 values to the sensor.
 
 At the end check the settings with Command "3".
