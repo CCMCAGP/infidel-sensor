@@ -76,7 +76,7 @@ Wiring to the Host Board
 Connect the the sensor to the host board, such as an Arduino Uno or
 Mega.
 
-Program the Host with Host\_ee\_prog.ino and start the console with
+Program the Host with Host\_ee\_prog.ino, select the port on which Arduino Uno appears, eg. COM7, and start the console (top right icon) with
 19200 baudrate.
 
 Console
